@@ -1,5 +1,6 @@
 'use strict';
-const {Model
+const {
+  Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class review extends Model {
