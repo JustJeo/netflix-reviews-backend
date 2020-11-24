@@ -31,6 +31,15 @@ const register = (req, res) => {
     })
 }
 
+const index = (req, res) => {
+  db.user.findAll().then((foundUsers) => {
+    if(!foundUsers) return res.json({
+      message: 'No Users found in database.'
+    })
+    res.status(200).json({ users: foundUsers })
+  })
+}
+
 const logout = (req, res) => {
   if (!req.user) {
     return res.json({ message: 'No User to log out' })
@@ -42,5 +51,6 @@ const logout = (req, res) => {
 module.exports = {
   login,
   register,
+  index,
   logout
 }
