@@ -30,7 +30,7 @@ app.use(cors(corsOptions))
 // middleware - session config
 app.use(session({
   // session is stored in the DB
-  secret: "REPLACE_THIS_WITH_A_REAL_SECRET",
+  secret: "ILikePizza",
   resave: false, // will not resave sessions
   saveUninitialized: false, // only create a session when a property is added to the session
   cookie: {
@@ -42,8 +42,17 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
+// // middleware for logged in user
+// app.use((req, res, next) => {
+//   // before every route, attach the flash messages and current user to res.locals
+//   // res.locals.alerts = req.flash();
+//   res.locals.currentUser = req.user;
+//   next();
+// });
+
 // middleware - API routes
 app.use('/api/v1/auth', routes.auth)
+app.use('/api/v1/reviews', routes.reviews)
 
 // connection
 app.listen(port, () => console.log(`Server is running on port ${port}`))

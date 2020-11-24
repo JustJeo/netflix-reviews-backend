@@ -1,16 +1,16 @@
 {
   "development": {
-    "database": "netflixseries",
+    "database": "netflixreviews",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "netflixseries",
+    "database": "netflixreviews",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "netflixseries",
+    "database": "netflixreviews",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
